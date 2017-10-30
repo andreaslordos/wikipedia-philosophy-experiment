@@ -3,15 +3,15 @@ import urllib.parse
 import lxml.html as lh
 from requests.exceptions import ConnectionError
 pastTargets=[]
-targetname=input("Input initial target. ")
-stop=int(input("How many times should the target be found before we move on to the next frequent target? "))
+targetname=input("Input initial target (where will I stop?): ")
+stop=int(input("How many times should the initial target be found before we move on to the next most frequent target? "))
 stop2=int(input("How many words should I traverse before I stop? "))
 print("Enjoy :)")
 print()
 
+
 class LinkNotFoundError(Exception):
     pass
-
 
 class InvalidPageNameError(Exception):
     pass
@@ -205,7 +205,8 @@ while True:
     while True:
         totalTrialsCounter+=1
         if loopCounter>=10:
-            targetWord=findMostFrequentWord(paths[-20:-1],"N")
+            print("Too much, I'll break")
+            break
         if len(validPaths)==stop:
             break
         someFlag=False
@@ -257,6 +258,7 @@ while True:
     pathArchive.append(paths)
     validPathsArchive.append(paths)
 
-print("Do your magic on hopPagesDict plz")
+print("Data: "+str(hopPagesDict))
+
     
     
