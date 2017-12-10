@@ -1,18 +1,25 @@
 # wikipedia-philosophy-experiment
+
 Allows you to run tests that yield data on what happens if you keep clicking the first link on a Wikipedia page
 
 If you're confused, that's fine. 
 
+The whole experiment is based on this: https://en.wikipedia.org/wiki/Wikipedia:Getting_to_Philosophy
+
 Essentially, you input three things:
 
-Initial Target
+Initial Target (usually Philosophy)
+
 Times the program should hit on the initial target before moving onto the next target (let this be x)
+
 Number of targets the program should complete (let this be y)
 
 After inputting these 3 parameters, the program will start on a completely random Wikipiedia page and start hopping from page to page by clicking the first link on each page. It will continue to do this until
 
 a) It reaches a dead end page with no links
+
 b) It ends up in a loop (e.g. Biology -> Organisms -> Biology -> Organisms etc.)
+
 c) It finds the target page
 
 Once it finds the target page x times, it will then pick another target based on the pages it has seen - it will usually pick the page it ran onto most often.
