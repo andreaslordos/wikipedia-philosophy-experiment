@@ -5,7 +5,7 @@ from requests.exceptions import ConnectionError
 pastTargets=[]
 targetname=input("Input initial target (where will I stop?): ")
 stop=int(input("How many times should the initial target be found before we move on to the next most frequent target? "))
-stop2=int(input("How many words should I traverse before I stop? "))
+stop2=int(input("How many targets should I find +"str(stop)+" times before I stop the program? "))
 print("Enjoy :)")
 print()
 
